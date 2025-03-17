@@ -3,4 +3,4 @@ def get_possible_sums(list1, list2):
 
 list1 = [1,2,3,4]
 list2 = [5,6]
-print(get_possible_sums(list1,list2))                                                                                          `
+print(get_possible_sums(list1,list2))                                                                                          
