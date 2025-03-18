@@ -58,6 +58,59 @@ def calculate_discount(price, discount):
 
 print(calculate_discount(100, '10%'))
 print(calculate_discount(100, 'abc')) 
+#5
+
+numbers = [1, 2, 3, 4, 5]
+result = 1
+for num in numbers:
+    result *= num
+print("Product:", result)
+
+#6
+import threading
+
+counter = 0
+lock = threading.Lock()
+def increment():
+    global counter
+    for  _ in range(100000):
+        with lock: # lock Counter variable before modifying the count
+            counter += 1
+
+threads = [threading.Thread(target=increment) for  _ in range(2)]
+for t in threads:
+    t.start()
+for t in threads:
+    t.join()
+
+print("Counter:", counter) 
+
+#8. Memory Leaks and Performance Debugging
+
+import time
+def efficient_function():
+    result = []
+    for i in range(100000):
+        result.append(i * 2) # the function sleeps for 2 seconds hence inefficent
+    return result
+
+print(len(efficient_function()))
+
+#9.Debug why the function returns `None`:
+
+
+def add(a, b):
+     result = a + b #missing return
+     return result
+print(add(3, 4))
+
+# 10. Silent Failures
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print ("error detected") # this except block does not handle the divide by zero error and the try block does not allow the expression to raise an error becuase it expects the except block to handle it 
+#print("No error detected!")
 
 
 
