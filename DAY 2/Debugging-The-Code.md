@@ -142,7 +142,7 @@ print(len(efficient_function()))
 ```
 #### Errors
 
--This function sleeps for 2 milliseconds which for a large for loop creates a lot of time inefficiency
+-This function sleeps for 2 milliseconds which for a large loop creates a lot of time inefficiency
 
 ### 9. Debug why the function returns None:
 
@@ -155,7 +155,7 @@ print(add(3, 4))
 ```
 #### Errors
 
-there was a missing retun statement in the function hence when printed it showed a none type as output
+there was a missing return statement in the function hence when printed it showed a none type as output
 
 ### 10. Silent Failures
 
