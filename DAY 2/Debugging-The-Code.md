@@ -127,6 +127,9 @@ for t in threads:
 print("Counter:", counter)  # Expected: 200000
 
 ```
+Errors
+
+The Two Threads are reading at the same time so we have use lock to prevent this.
 ### 8. Memory Leaks and Performance Debugging
 
 ```python
