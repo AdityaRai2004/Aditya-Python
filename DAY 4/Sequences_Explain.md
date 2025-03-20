@@ -10,15 +10,15 @@ The main types of sequences in Python are:
 
 ## 2. Differentiation between the Three Sequences
 
-- Strings: Strings are sequences of characters enclosed in quotes. They are immutable, meaning their contents cannot be modified after initialisation.
+Strings: Strings are sequences of characters enclosed in quotes. They are immutable, meaning their contents cannot be modified after initialisation.
 
-- Lists
+Lists:
 
-    Definition: A list is a mutable sequence of items that can store elements of any data type.
+Definition: A list is a mutable sequence of items that can store elements of any data type.
 
-    Mutability: Mutable — you can add, remove, or modify its elements.  
+Mutability: Mutable — you can add, remove, or modify its elements.  
 
-    Usage: Ideal for dynamic collections of homogeneous or heterogeneous data.
+Usage: Ideal for dynamic collections of homogeneous or heterogeneous data.
 
 Syntax:
 
@@ -33,7 +33,7 @@ Supports indexing, slicing, nesting (e.g., lists within lists).
 
 Methods include .append(), .remove(), .pop(), .sort(), etc.
 
-- Tuples
+Tuples
 
 Definition: A tuple is an immutable sequence of items that can store elements of any data type.
 
@@ -61,7 +61,7 @@ Tuples are hashable (can be used as dictionary keys) if they contain only immuta
 
 Indexing is based on (0-19...) it generally gives the character a unique identity that allows the user to find the character in the string. The index of the first character is 0, the index of the second is 1 etc. It is generally the same in Lists and Tuples
 
-1. General Indexing Rules
+General Indexing Rules
 
 Zero-based indexing: The first element has an index of 0, the second 1, and so on.
 
@@ -144,11 +144,11 @@ Explaination:
 
 Slicing Syntax: The general slicing syntax is [start:stop:step].
 
-1. start: The starting index (default is 0).
+start: The starting index (default is 0).
 
-2. stop: The ending index (default is the length of the string).
+stop: The ending index (default is the length of the string).
 
-3. step: The step size or increment (negative values traverse backward).
+step: The step size or increment (negative values traverse backward).
 
 # 9. List Concantenation and Repitition
 
@@ -191,7 +191,8 @@ Solution:
 
 The difference between list.append() and list.extend() in Python lies in how they add elements to a list:
 
-1. list.append()
+list.append():
+
 Functionality: Adds a single element (object) to the end of the list.
 
 Behavior: The entire object, regardless of its type, is added as a single item.
@@ -208,7 +209,8 @@ print(my_list)          # Output: [1, 2, 3, [4, 5]]
 
 ```
 
-2. list.extend()
+list.extend()
+
 Functionality: Adds all elements of an iterable (e.g., list, tuple, string) to the end of the list.
 
 Behavior: Each element from the iterable is added individually to the list.
