@@ -101,7 +101,7 @@ print(num)
 
 ```
 
-## Result Of Length of Elements
+## 6. Result Of Length of Elements
 
 ```python
 
@@ -150,7 +150,7 @@ stop: The ending index (default is the length of the string).
 
 step: The step size or increment (negative values traverse backward).
 
-# 9. List Concantenation and Repitition
+## 9. List Concantenation and Repitition
 
 ```python
 
@@ -226,7 +226,7 @@ print(my_list)          # Output: [1, 2, 3, 4, 5]
 
 ```
 
-# 13. Spliting Sentence into individual characters
+## 13. Spliting Sentence into individual characters
 
 ```python
 
