@@ -10,15 +10,15 @@ The main types of sequences in Python are:
 
 ## 2. Differentiation between the Three Sequences
 
-1. Strings: Strings are sequences of characters enclosed in quotes. They are immutable, meaning their contents cannot be modified after initialisation.
+- Strings: Strings are sequences of characters enclosed in quotes. They are immutable, meaning their contents cannot be modified after initialisation.
 
-2. Lists
+- Lists
 
-Definition: A list is a mutable sequence of items that can store elements of any data type.
+    Definition: A list is a mutable sequence of items that can store elements of any data type.
 
-Mutability: Mutable — you can add, remove, or modify its elements.
+    Mutability: Mutable — you can add, remove, or modify its elements.  
 
-Usage: Ideal for dynamic collections of homogeneous or heterogeneous data.
+    Usage: Ideal for dynamic collections of homogeneous or heterogeneous data.
 
 Syntax:
 
@@ -33,7 +33,7 @@ Supports indexing, slicing, nesting (e.g., lists within lists).
 
 Methods include .append(), .remove(), .pop(), .sort(), etc.
 
-3. Tuples
+- Tuples
 
 Definition: A tuple is an immutable sequence of items that can store elements of any data type.
 
