@@ -1,260 +1,428 @@
-## 1. Introduction to Sequences
+# Assignment Solution
 
-In Python, a **sequence** is an ordered collection of items. The order of elements is preserved, and each element is accessible via its index.
+## 1. Define a sequence. What types of sequences exist in Python?
+A sequence is an ordered collection of items. Python has several sequence types:
 
-The main types of sequences in Python are:
+- **Strings (`str`)**: Immutable, stores characters.
+- **Lists (`list`)**: Mutable, stores elements of different types.
+- **Tuples (`tuple`)**: Immutable, similar to lists but cannot be modified.
+- **Ranges (`range`)**: Immutable sequence of numbers.
+- **Byte sequences (`bytes`, `bytearray`)**: Stores binary data.
 
-- Strings
-- Lists
-- Tuples
+## 2. How are strings, lists, and tuples different from each other?
+- **Strings (`str`)**: Immutable and stores a sequence of characters.
+- **Lists (`list`)**: Mutable and can store multiple data types.
+- **Tuples (`tuple`)**: Immutable like strings but can hold multiple data types like lists.
 
-## 2. Differentiation between the Three Sequences
-
-Strings: Strings are sequences of characters enclosed in quotes. They are immutable, meaning their contents cannot be modified after initialisation.
-
-Lists:
-
-Definition: A list is a mutable sequence of items that can store elements of any data type.
-
-Mutability: Mutable — you can add, remove, or modify its elements.  
-
-Usage: Ideal for dynamic collections of homogeneous or heterogeneous data.
-
-Syntax:
-
+## 3. Explain how indexing works in Python with an example.
+Indexing starts from `0` for positive values and `-1` for negative values.
 ```python
-
-my_list = [1, 2, 3, "apple", [4, 5]]
-
-```
-Key Features:
-
-Supports indexing, slicing, nesting (e.g., lists within lists).
-
-Methods include .append(), .remove(), .pop(), .sort(), etc.
-
-Tuples
-
-Definition: A tuple is an immutable sequence of items that can store elements of any data type.
-
-Mutability: Immutable — once created, the contents cannot be changed.
-
-Usage: Best for fixed collections of heterogeneous data where immutability is desired.
-
-Syntax:
-
-```python
-
-my_tuple = (1, "apple", [3, 4])
-
+string = "Python"
+print(string[0])   # Output: P
+print(string[-1])  # Output: n
 ```
 
-Single-element tuples require a trailing comma: (42,).
-
-Key Features:
-
-Supports indexing and slicing but not modification.
-
-Tuples are hashable (can be used as dictionary keys) if they contain only immutable elements.
-
-## 3. How Indexing Works
-
-Indexing is based on (0-19...) it generally gives the character a unique identity that allows the user to find the character in the string. The index of the first character is 0, the index of the second is 1 etc. It is generally the same in Lists and Tuples
-
-General Indexing Rules
-
-Zero-based indexing: The first element has an index of 0, the second 1, and so on.
-
-Negative indexing: Allows access from the end of the sequence, where -1 represents the last element, -2 the second last, etc.
-
-Syntax: Uses square brackets [] to specify the index:
-
+## 4. Write code to access the last character of a string.
 ```python
-
-my_list = [10, 20, 30]
-print(my_list[0])  # Output: 10
-print(my_list[-1]) # Output: 30
-
-```
-## 4. Last Character Access
-
-```python
-#Creating a String
-str = "Hello World"
-
-#Accessing the Last Character
-last_ch = str[-1]
-
-#Printing the Character
-print(last_ch)
-
+s = "Hello"
+print(s[-1])  # Output: o
 ```
 
-## 5. Access Third Element
-
+## 5. Create a list of numbers and access the third element.
 ```python
-
-
-numbers = [1, 2, 3, 4]
-num = numbers[2]
-print(num)
-
+numbers = [10, 20, 30, 40, 50]
+print(numbers[2])  # Output: 30
 ```
 
-## 6. Result Of Length of Elements
+## 6. What is the result of `len([1, [2, 3], 4])` and why?
+**Output:** `3` because the list contains three elements: `1`, `[2,3]`, and `4`.
 
+## 7. Explain slicing with a practical example.
 ```python
-
-numbers = ([1 , [2, 3] , 4])
-length = len(numbers)
-print(length)
-
+s = "Python Programming"
+print(s[0:6])  # Output: Python
 ```
 
-Output: The Answer is Three
-
-Explaination : This is because the len() function counts the number of elements in a list, and in this case, u can see there is list inside a list and it is considered a single element. So the total number of elements is 3.
-
-## 7. Slicing
-
-Slixixng is a way to extract a subset of elements from a list. It is done by specifying the start and the end of a list, string and tuple.
-
-```python 
-
-numbers = [0, 1, 2, 3, 5, 6]
-print(numbers[1:4]) # Output: [1, 2, 3]
-
+## 8. How would you reverse a string using slicing?
+```python
+s = "Python"
+print(s[::-1])  # Output: nohtyP
 ```
 
-## 8. Reversing a String using Slicing
-
+## 9. Demonstrate list concatenation and repetition with examples.
 ```python
-
-# Define a string
-my_string = "Hello, World!"
-
-# Reverse the string using slicing
-reversed_string = my_string[::-1]
-
-# Print the reversed string
-print("Reversed string:", reversed_string)
-
-```
-Explaination: 
-
-Slicing Syntax: The general slicing syntax is [start:stop:step].
-
-start: The starting index (default is 0).
-
-stop: The ending index (default is the length of the string).
-
-step: The step size or increment (negative values traverse backward).
-
-## 9. List Concantenation and Repitition
-
-```python
-
-list1 = [1, 2, 3, 4]
-list2 = [2, 4, 5, 6, 8]
-result = list1 + list2
-print(result)
-
-```
-Explaination: This is a way to combine two lists into one. The + operator is used.
-
-```python
-
-list1 = [2,4,5,6] * 7
-print(list1)
-
-```
-## 10. Counting Occurences
-
-```python
-
-list1 = [1,2,3,4,5,6,7,2,5,36,52,34,6,5,4]
-print(list1.count(2), list1.count(4), list1.count(5))
-
-```
-## 11. Output of a Tuple that is sliced
-
-```python
-
-my_tuple = (1,2,3)
-print(my_tuple[1:]) # Output : 2,3
-
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+print(list1 + list2)  # Concatenation Output: [1, 2, 3, 4, 5, 6]
+print(list1 * 2)      # Repetition Output: [1, 2, 3, 1, 2, 3]
 ```
 
-## 12.  Difference between list.append() and list.extend()
-
-Solution: 
-
-The difference between list.append() and list.extend() in Python lies in how they add elements to a list:
-
-list.append():
-
-Functionality: Adds a single element (object) to the end of the list.
-
-Behavior: The entire object, regardless of its type, is added as a single item.
-
-Use Case: Use when you want to add one item (e.g., a number, string, or another list) to the list.
-
-Example:
-
+## 10. Write code to count the occurrences of an element in a list.
 ```python
-
-my_list = [1, 2, 3]
-my_list.append([4, 5])  # Appends the list [4, 5] as a single element
-print(my_list)          # Output: [1, 2, 3, [4, 5]]
-
+lst = [1, 2, 2, 3, 4, 2]
+print(lst.count(2))  # Output: 3
 ```
 
-list.extend()
+## 11. What will `my_tuple = (1, 2, 3); print(my_tuple[1:])` output?
+**Output:** `(2, 3)`
 
-Functionality: Adds all elements of an iterable (e.g., list, tuple, string) to the end of the list.
-
-Behavior: Each element from the iterable is added individually to the list.
-
-Use Case: Use when you want to merge multiple elements from an iterable into the list.
-
-Example:
+## 12. Explain the difference between `list.append()` and `list.extend()`.
+- `append(x)`: Adds `x` as a single element.
+- `extend(iterable)`: Adds elements of `iterable` individually.
 
 ```python
-my_list = [1, 2, 3]
-my_list.extend([4, 5])  # Extends the list by adding each element from [4, 5]
-print(my_list)          # Output: [1, 2, 3, 4, 5]
-
+lst = [1, 2]
+lst.append([3, 4])  # Output: [1, 2, [3, 4]]
+lst = [1, 2]
+lst.extend([3, 4])  # Output: [1, 2, 3, 4]
 ```
 
-## 13. Spliting Sentence into individual characters
-
+## 13. Write code to split the sentence: "Learn Python, step by step!" into words.
 ```python
-
-sen = "Learn Python, step by step!" 
-val = sen.split()
-
+sentence = "Learn Python, step by step!"
+print(sentence.split())  # Output: ['Learn', 'Python,', 'step', 'by', 'step!']
 ```
 
-## 14. Joining a list into a Single String
-
+## 14. Join a list `['Python', 'is', 'fun']` into a single string.
 ```python
-
-# Define the list
-my_list = ['Python', 'is', 'fun']
-
-# Join the list into a single string with spaces as separators
-result = ' '.join(my_list)
-
-# Print the result
-print(result)
-
+words = ['Python', 'is', 'fun']
+print(" ".join(words))  # Output: "Python is fun"
 ```
 
-## 15. Finding occurences
-
+## 15. Given a list `numbers = [1, 2, 2, 3, 4, 2]`, find the index of the first `2`.
 ```python
-
 numbers = [1, 2, 2, 3, 4, 2]
-print(numbers.index(2))
-
+print(numbers.index(2))  # Output: 1
 ```
+
+## 16. Write code to check if a string is a palindrome.
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("madam"))  # Output: True
+```
+
+## 17. Implement a function that returns the length of the longest word in a sentence.
+```python
+def longest_word_length(sentence):
+    return max(len(word) for word in sentence.split())
+
+print(longest_word_length("Python programming is fun"))  # Output: 11
+```
+
+## 18. Demonstrate nested list indexing.
+```python
+nested_list = [[1, 2, 3], [4, 5, 6]]
+print(nested_list[1][2])  # Output: 6
+```
+
+## 19. How do you convert a list of characters into a string?
+```python
+chars = ['H', 'e', 'l', 'l', 'o']
+print("".join(chars))  # Output: "Hello"
+```
+
+## 20. Write code to remove duplicates from a list while preserving order.
+```python
+def remove_duplicates(lst):
+    return list(dict.fromkeys(lst))
+
+print(remove_duplicates([1, 2, 2, 3, 4, 2]))  # Output: [1, 2, 3, 4]
+```
+
+## 21. Write a function that takes a list of tuples and sorts it by the second element of each tuple.
+```python
+def sort_by_second_element(tuples):
+    return sorted(tuples, key=lambda x: x[1])
+
+print(sort_by_second_element([(1, 3), (2, 1), (4, 2)]))  # Output: [(2, 1), (4, 2), (1, 3)]
+```
+
+## 22. Implement a program to flatten a nested list of arbitrary depth.
+```python
+def flatten(lst):
+    result = []
+    for i in lst:
+        if isinstance(i, list):
+            result.extend(flatten(i))
+        else:
+            result.append(i)
+    return result
+
+print(flatten([1, [2, [3, 4], 5], 6]))  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+## 23. Create a function that rotates a list to the right by k steps.
+```python
+def rotate(lst, k):
+    k %= len(lst)
+    return lst[-k:] + lst[:-k]
+
+print(rotate([1, 2, 3, 4, 5], 2))  # Output: [4, 5, 1, 2, 3]
+```
+
+## 24. Given two strings, write a function that returns True if they are anagrams.
+```python
+def is_anagram(s1, s2):
+    return sorted(s1) == sorted(s2)
+
+print(is_anagram("listen", "silent"))  # Output: True
+```
+
+## 25. Create a function to split a list into chunks of a specified size.
+```python
+def chunk(lst, size):
+    return [lst[i:i+size] for i in range(0, len(lst), size)]
+
+print(chunk([1, 2, 3, 4, 5, 6], 2))  # Output: [[1, 2], [3, 4], [5, 6]]
+```
+
+## 26. Implement a function that merges two sorted lists into one sorted list.
+```python
+def merge_sorted_lists(lst1, lst2):
+    return sorted(lst1 + lst2)
+
+print(merge_sorted_lists([1, 3, 5], [2, 4, 6]))  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+
+
+
+
+
+
+# 🚀 Questions on Sequences in Python
+
+## 1. Data Pipeline Validator
+
+**Task**: Identify the longest pipeline and return pipelines taking more than a given threshold time.
+
+```python
+pipelines = [
+    ("Data Ingestion", 30),
+    ("Preprocessing", 45),
+    ("Model Training", 120),
+    ("Evaluation", 20)
+]
+threshold = 40
+
+longest_pipeline = max(pipelines, key=lambda x: x[1])[0]
+exceeding_pipelines = [p[0] for p in pipelines if p[1] > threshold]
+
+print("Longest Pipeline:", longest_pipeline)
+print("Pipelines exceeding threshold:", exceeding_pipelines)
+```
+
+## 2. Log File Parser
+
+**Task**: Extract unique error codes from a log file.
+
+```python
+logs = """ERROR 404: Not Found
+INFO: Connection established
+ERROR 500: Internal Server Error
+ERROR 404: Not Found
+"""
+
+error_codes = set(line.split()[1].strip(':') for line in logs.split('\n') if line.startswith("ERROR"))
+print("Unique Error Codes:", list(error_codes))
+```
+
+## 3. Config File Reader
+
+**Task**: Parse key-value pairs from a configuration string.
+
+```python
+config = "host=127.0.0.1;port=8080;mode=debug"
+config_pairs = [tuple(pair.split('=')) for pair in config.split(';')]
+print(config_pairs)
+```
+
+## 4. Social Media Data Cleaner
+
+**Task**: Extract unique hashtags from a social media post.
+
+```python
+post = "Loving the new #Python course! #Coding #Python #Learning"
+hashtags = list(set(word for word in post.split() if word.startswith('#')))
+print(hashtags)
+```
+
+## 5. Secret Code Decoder
+
+**Task**: Extract every third character from a string.
+
+```python
+secret_message = "hweollrolwd"
+decoded_message = secret_message[::3]
+print(decoded_message)
+```
+
+## 6. Inventory Tracker
+
+**Task**: Find the product with the highest quantity.
+
+```python
+inventory = [
+    ("Apples", 50),
+    ("Oranges", 75),
+    ("Bananas", 30)
+]
+most_stocked = max(inventory, key=lambda x: x[1])[0]
+print(most_stocked)
+```
+
+## 7. Survey Data Analyzer
+
+**Task**: Extract scores from a survey string and find min/max.
+
+```python
+survey_data = "5,3,4,1,2"
+scores = list(map(int, survey_data.split(',')))
+print("Max Score:", max(scores))
+print("Min Score:", min(scores))
+```
+
+## 8. Access Control Manager
+
+**Task**: Manage user access levels using lists and tuples.
+
+```python
+users = ["Alice", "Bob", "Charlie"]
+roles = ("Admin", "Editor", "Viewer")
+access = dict(zip(users, roles))
+print(access)
+```
+
+## 9. Customer Support Ticket System
+
+**Task**: Categorize tickets based on message length.
+
+```python
+message = "My account is locked, please help!"
+length = len(message)
+category = "Short" if length < 20 else "Medium" if length < 50 else "Long"
+print("Category:", category)
+```
+
+## 10. Product Catalog Manager
+
+**Task**: Find the product with the longest name.
+
+```python
+products = ["Laptop", "Smartphone", "Wireless Headphones"]
+longest_product = max(products, key=len)
+print(longest_product)
+```
+
+## 11. Sensor Data Analyzer
+
+**Task**: Extract the last 10 sensor readings and calculate the average.
+
+```python
+sensor_readings = [12, 15, 14, 16, 20, 22, 21, 23, 25, 30, 28, 27]
+last_10 = sensor_readings[-10:]
+average = sum(last_10) / len(last_10)
+print("Average:", average)
+```
+
+## 12. Transaction Reverser
+
+**Task**: Reverse the list of transactions.
+
+```python
+transactions = [100, -50, 200, -150, 50]
+reversed_transactions = transactions[::-1]
+print(reversed_transactions)
+```
+
+## 13. Log Formatter
+
+**Task**: Format logs with timestamps.
+
+```python
+logs = ["System Boot", "Network Connected", "User Login"]
+timestamp = "2025-03-20"
+formatted_logs = [f"{timestamp}: {log}" for log in logs]
+print(formatted_logs)
+```
+
+## 14. Pattern Generator
+
+**Task**: Generate patterns with repetition.
+
+```python
+symbol = "*"
+count = 5
+pattern = " ".join([symbol] * count)
+print(pattern)
+```
+
+## 15. Customer Feedback Analyzer
+
+**Task**: Count keyword occurrences.
+
+```python
+feedback = "The product is excellent, absolutely excellent!"
+count = feedback.lower().count("excellent")
+print("'excellent' count:", count)
+```
+
+## 16. Sentence Index Finder
+
+**Task**: Find the index of the first occurrence of "error".
+
+```python
+log = "INFO: All systems go. ERROR: Failed to start service."
+index = log.lower().find("error")
+print("Index:", index)
+```
+
+## 17. CSV Parser
+
+**Task**: Parse CSV data into lists.
+
+```python
+csv_data = "Alice,25,Engineer\nBob,30,Doctor\nCharlie,22,Artist"
+rows = [row.split(',') for row in csv_data.split('\n')]
+print(rows)
+```
+
+## 18. Username Generator
+
+**Task**: Generate usernames from full names.
+
+```python
+names = ["Alice Wonderland", "Bob Builder", "Charlie Chaplin"]
+usernames = [name.split()[0][0] + name.split()[1] for name in names]
+print(usernames)
+```
+
+## 19. Chat Log Analyzer
+
+**Task**: Count messages per user from chat logs.
+
+```python
+chat_logs = [
+    "Alice: Hi!",
+    "Bob: Hello!",
+    "Alice: How are you?",
+    "Bob: I’m good, thanks!"
+]
+from collections import Counter
+message_counts = Counter(log.split(':')[0] for log in chat_logs)
+print(message_counts)
+```
+
+## 20. Data Compressor
+
+**Task**: Compress recurring substrings.
+
+```python
+data = "abababababab"
+substring = "ab"
+count = data.count(substring)
+print(f"'{substring}' repeated {count} times")
+```
+
