@@ -226,7 +226,7 @@ ERROR 404: Not Found
 """
 
 error_codes = set(line.split()[1].strip(':') for line in logs.split('\n') if line.startswith("ERROR"))
-print("Unique Error Codes:", list(error_codes))
+print("Unique Error Codes:", list(error_codes)) 
 ```
 
 ## 3. Config File Reader
