@@ -105,59 +105,42 @@ while True:
 
 # 7. Password Strength Checker
 # Classify passwords as "Weak", "Medium", or "Strong" based on length, numbers, uppercase/lowercase letters, and special characters.
-# Loop until a "Strong" password is entered.
-def passwordstrength(password):
-    strength = 0
-    has_upper = False
-    has_lower = False
-    has_digit = False
-    has_special = False
-    special_chars = "!@#$%^&*(),.?\":{}|<>"
-
-
-    for char in password:
-        if char.isupper():
-            has_upper = True
-        elif char.islower():
-            has_lower = True
-        elif char.isdigit():
-            has_digit = True
-        elif char in special_chars:
-            has_special = True
+def classify_password(password):
     
-    
-    if len(password) >= 8:
-        strength += 1
-    if has_digit:
-        strength += 1
-    if has_upper and has_lower:
-        strength += 1
-    if has_special:
-        strength += 1
+    length = len(password)
+    has_lowercase = any(char.islower() for char in password)
+    has_uppercase = any(char.isupper() for char in password)
+    has_digit = any(char.isdigit() for char in password)
+    has_special = any(char in "!@#$%^&*()-_=+[]{}|;:'\",.<>?/`~" for char in password)
 
-    
-    if strength == 4:
-        return "Strong"
-    elif strength == 3:
-        return "Medium"
-    else:
+    conditions_met = sum([has_lowercase, has_uppercase, has_digit, has_special])
+
+    if length < 8 or conditions_met < 2:
         return "Weak"
-
-
-while True:
-    password = input("Enter your password: ")
-    result = passwordstrength(password)
-    print(f"Password Strength: {result}")
-    
-    if result == "Strong":
-        print("Password accepted!")
-        break
+    elif conditions_met >= 2 and length >= 8:
+        return "Medium"
+    elif length >= 12 and has_lowercase and has_uppercase and has_digit and has_special:
+        return "Strong"
     else:
-        print("Try a stronger password.")
+        return "Medium"
+
+def main():
+    while True:
+        password = input("Enter a password: ")
+        classification = classify_password(password)
+        print(f"Classified as: {classification}")
+        
+        if classification == "Strong":
+            print("You've entered a Strong password.")
+            break
+        else:
+            print("Please try again.")
+
+if __name__ == "__main__":
+    main()
+
 
 # 8. Banking System with ATM Functionality
-# Simulate an ATM system for checking balance, withdrawal, and deposit.
-# Use loops for multiple transactions and conditionals to prevent overdraft.
 
 # Initial balance
 balance = 1000
