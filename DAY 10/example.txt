@@ -1,4 +1,2 @@
-Hello, this is the first line.
-This is the second line.
-Here is the third line.
-And this is the fourth line.
+Hello, this is a new file!
+Writing more text.
