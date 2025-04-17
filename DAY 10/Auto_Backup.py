@@ -1,14 +1,26 @@
-import shutil
+import csv
 import os
-from datetime import date
+from datetime import datetime
 
-backup_folder = 'backup'
-os.makedirs(backup_folder, exist_ok=True)
+# Define source and backup directory
+source_file = 'data.csv'
+backup_dir = 'backup'
 
-today = date.today().strftime("%Y%M%D")
+# Ensure the backup directory exists
+os.makedirs(backup_dir, exist_ok=True)
 
-new_filename = f"data_backup_{today}.csv"
+# Format current date as YYYYMMDD
+current_date = datetime.now().strftime('%Y%m%d')
 
-shutil.copy("data.csv", os.path.join(backup_folder, new_filename))
+# Construct backup filename with date
+backup_file = os.path.join(backup_dir, f'data_backup_{current_date}.csv')
 
-print(f"Backup created: {backup_folder}/{new_filename}")
+# Copy contents from source to backup file
+with open(source_file, 'r', newline='', encoding='utf-8') as src, \
+     open(backup_file, 'w', newline='', encoding='utf-8') as dst:
+    reader = csv.reader(src)
+    writer = csv.writer(dst)
+    for row in reader:
+        writer.writerow(row)
+
+print(f'Backup created: {backup_file}')
